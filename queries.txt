@@ -1,0 +1,28 @@
+SELECT * FROM Employee WHERE salary > 50000; --shows all employees mho make more than $50,000
+
+       SSN      GYMID     SALARY ADDRESS                        PHONE                    FNAME                            LNAME
+---------- ---------- ---------- ------------------------------ ------------------------ -------------------------------- --------------------------------
+    111112         22      55000 12 Tesla Lane                  1234568899               Elon                             Musk
+    111113         21     100000 51 Amazon Street               3213599993               Jeff                             Bezos
+    111116         25      55000 122 N Market Lane              6960430122               Joe                              Rogan
+    111117         25      80000 432 Vermont Drive              3213435521               Juji                             Mufu
+
+SELECT * FROM Customer WHERE customerId IN (SELECT customerId FROM Customer_CheckIn WHERE timestamp IN (SELECT MAX(timestamp) FROM Customer_CheckIn WHERE gymId = 24)); --lists the most recent customer to check in to gym with id 24
+
+CUSTOMERID ADDRESS                        PHONE                    FNAME                            LNAME
+---------- ------------------------------ ------------------------ -------------------------------- --------------------------------
+         8 86 Ivy Street                  1396874578               Pete                             Wheeler
+
+SELECT * FROM Customer NATURAL JOIN Equipment_CheckOut NATURAL JOIN Equipment WHERE condition = 'worn'; --lists customers who have returned equipment that is worn, and the info on the equipment/return
+EQUIPMENTID CUSTOMERID ADDRESS                        PHONE                    FNAME                            LNAME                            TIMESTAMP                        RETURNED NAME                                  GYMID CONDITION
+----------- ---------- ------------------------------ ------------------------ -------------------------------- -------------------------------- ------------------------------ ---------- -------------------------------- ---------- ----------------
+         21         10 48 Cherry Road                 1234879824               Kimmy                            Eckman                           11-NOV-19 02.27.06.206415 PM            1 Resistance Band                          21 worn
+         21          5 500 Garfield Road              4589451567               Dmitri                           Petrovic                         11-NOV-19 02.27.06.170597 PM            1 Resistance Band                          21 worn
+         21         11 72 Wagon Drive                 5786314876               Jorge                            Garcia                           11-NOV-19 02.27.06.136109 PM            1 Resistance Band                          21 worn
+         21          6 9564 Greenview Drive           4589875167               Kiesha                           Phillips                         11-NOV-19 02.27.06.091168 PM            1 Resistance Band                          21 worn
+         21          1 88 Mark Lane                   2334357657               Arnold                           Schwarzenegger                   11-NOV-19 02.27.06.052031 PM            1 Resistance Band                          21 worn
+         23          7 97 Maiden Street               4586123487               Pablo                            Sanchez                          11-NOV-19 02.27.06.183972 PM            1 Basketball                               21 worn
+         23          2 33 Ding Street                 1548885463               Michael                          Vsauce                           11-NOV-19 02.27.06.149296 PM            1 Basketball                               21 worn
+         23          8 86 Ivy Street                  1396874578               Pete                             Wheeler                          11-NOV-19 02.27.06.106661 PM            1 Basketball                               21 worn
+         23          3 423 Spring Street              5169825648               Achmed                           Khan                             11-NOV-19 02.27.06.069828 PM            1 Basketball                               21 worn
+

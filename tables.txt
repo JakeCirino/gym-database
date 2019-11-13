@@ -1,0 +1,160 @@
+SELECT * FROM GYM;
+
+     GYMID ADDRESS                        MANAGERSSN PHONE
+---------- ------------------------------ ---------- ------------------------
+        21 430 Anderson Street                111111 6301435523
+        22 13 Stonewater Lane                 111112 8443192311
+        23 42 West State Street               111114 2321320001
+        24 12 East State Street               111115 3219991323
+        25 82 Court Street                    111116 8325543210
+
+SELECT * FROM CUSTOMER;
+
+CUSTOMERID ADDRESS                        PHONE                    FNAME                            LNAME
+---------- ------------------------------ ------------------------ -------------------------------- --------------------------------
+         1 88 Mark Lane                   2334357657               Arnold                           Schwarzenegger
+         2 33 Ding Street                 1548885463               Michael                          Vsauce
+         3 423 Spring Street              5169825648               Achmed                           Khan
+         4 88 Walnut Road                 4586981123               Ashley                           Weber
+         5 500 Garfield Road              4589451567               Dmitri                           Petrovic
+         6 9564 Greenview Drive           4589875167               Kiesha                           Phillips
+         7 97 Maiden Street               4586123487               Pablo                            Sanchez
+         8 86 Ivy Street                  1396874578               Pete                             Wheeler
+         9 349 South Central Lane         8753185498               Sidney                           Weber
+        10 48 Cherry Road                 1234879824               Kimmy                            Eckman
+        11 72 Wagon Drive                 5786314876               Jorge                            Garcia
+
+SELECT * FROM EMPLOYEE;
+
+       SSN      GYMID     SALARY ADDRESS                        PHONE                    FNAME                            LNAME
+---------- ---------- ---------- ------------------------------ ------------------------ -------------------------------- --------------------------------
+    111111         21      50000 12 Power Court                 3215552321               Bob                              Lazar
+    111112         22      55000 12 Tesla Lane                  1234568899               Elon                             Musk
+    111113         21     100000 51 Amazon Street               3213599993               Jeff                             Bezos
+    111114         23      25000 12 Silicon Way                 3213334921               Mark                             Zuckerberg
+    111115         24      50000 84 Apple Street                2134432135               Steve                            Jobs
+    111116         25      55000 122 N Market Lane              6960430122               Joe                              Rogan
+    111117         25      80000 432 Vermont Drive              3213435521               Juji                             Mufu
+
+SELECT * FROM EQUIPMENT;
+
+EQUIPMENTID NAME                                  GYMID CONDITION
+----------- -------------------------------- ---------- ----------------
+         16 Foam Roller                              21 good
+         17 Foam Roller                              21 worn
+         18 Yoga Mat                                 21 good
+         19 Yoga Mat                                 21 bad
+         20 Resistance Band                          21 good
+         21 Resistance Band                          21 worn
+         22 Basketball                               21 good
+         23 Basketball                               21 worn
+         24 Basketball                               21 good
+         25 Foam Roller                              22 good
+         26 Foam Roller                              22 worn
+
+EQUIPMENTID NAME                                  GYMID CONDITION
+----------- -------------------------------- ---------- ----------------
+         27 Yoga Mat                                 22 good
+         28 Yoga Mat                                 22 bad
+         29 Resistance Band                          22 good
+         30 Resistance Band                          22 worn
+         31 Basketball                               22 good
+         32 Basketball                               22 worn
+         33 Basketball                               22 good
+         34 Foam Roller                              23 good
+         35 Foam Roller                              23 worn
+         36 Yoga Mat                                 23 good
+         37 Yoga Mat                                 23 bad
+
+EQUIPMENTID NAME                                  GYMID CONDITION
+----------- -------------------------------- ---------- ----------------
+         38 Resistance Band                          23 good
+         39 Resistance Band                          23 worn
+         40 Basketball                               23 good
+         41 Basketball                               23 worn
+         42 Basketball                               23 good
+         43 Foam Roller                              24 good
+         44 Foam Roller                              24 worn
+         45 Yoga Mat                                 24 good
+         46 Yoga Mat                                 24 bad
+         47 Resistance Band                          24 good
+         48 Resistance Band                          24 worn
+
+EQUIPMENTID NAME                                  GYMID CONDITION
+----------- -------------------------------- ---------- ----------------
+         49 Basketball                               24 good
+         50 Basketball                               24 worn
+         51 Basketball                               24 good
+         52 Foam Roller                              25 good
+         53 Foam Roller                              25 worn
+         54 Yoga Mat                                 25 good
+         55 Yoga Mat                                 25 bad
+         56 Resistance Band                          25 good
+         57 Resistance Band                          25 worn
+         58 Basketball                               25 good
+         59 Basketball                               25 worn
+
+EQUIPMENTID NAME                                  GYMID CONDITION
+----------- -------------------------------- ---------- ----------------
+         60 Basketball                               25 good
+
+SELECT * FROM EQUIPMENT_CHECKOUT;
+
+TIMESTAMP                      CUSTOMERID EQUIPMENTID   RETURNED
+------------------------------ ---------- ----------- ----------
+11-NOV-19 02.27.06.052031 PM            1          21          1
+11-NOV-19 02.27.06.059252 PM            2          22          1
+11-NOV-19 02.27.06.069828 PM            3          23          1
+11-NOV-19 02.27.06.078017 PM            4          24          1
+11-NOV-19 02.27.06.084570 PM            5          25          1
+11-NOV-19 02.27.06.091168 PM            6          21          1
+11-NOV-19 02.27.06.100209 PM            7          22          1
+11-NOV-19 02.27.06.106661 PM            8          23          1
+11-NOV-19 02.27.06.114295 PM            9          24          1
+11-NOV-19 02.27.06.127094 PM           10          25          1
+11-NOV-19 02.27.06.136109 PM           11          21          1
+
+TIMESTAMP                      CUSTOMERID EQUIPMENTID   RETURNED
+------------------------------ ---------- ----------- ----------
+11-NOV-19 02.27.06.143069 PM            1          22          1
+11-NOV-19 02.27.06.149296 PM            2          23          1
+11-NOV-19 02.27.06.158412 PM            3          24          1
+11-NOV-19 02.27.06.164507 PM            4          25          1
+11-NOV-19 02.27.06.170597 PM            5          21          1
+11-NOV-19 02.27.06.177923 PM            6          22          1
+11-NOV-19 02.27.06.183972 PM            7          23          1
+11-NOV-19 02.27.06.192328 PM            8          24          1
+11-NOV-19 02.27.06.198418 PM            9          25          1
+11-NOV-19 02.27.06.206415 PM           10          21          1
+11-NOV-19 02.27.07.009824 PM           11          22          1
+
+SELECT * FROM CUSTOMER_CHECKIN;
+
+TIMESTAMP                      CUSTOMERID      GYMID
+------------------------------ ---------- ----------
+11-NOV-19 02.18.10.107623 PM            1         21
+11-NOV-19 02.19.50.825596 PM            2         22
+11-NOV-19 02.19.50.833661 PM            3         23
+11-NOV-19 02.19.50.841323 PM            4         24
+11-NOV-19 02.19.50.848118 PM            5         25
+11-NOV-19 02.19.50.854870 PM            6         21
+11-NOV-19 02.19.50.861269 PM            7         22
+11-NOV-19 02.19.50.869184 PM            8         23
+11-NOV-19 02.19.50.877638 PM            9         24
+11-NOV-19 02.19.50.886045 PM           10         25
+11-NOV-19 02.19.50.894767 PM           11         21
+
+TIMESTAMP                      CUSTOMERID      GYMID
+------------------------------ ---------- ----------
+11-NOV-19 02.19.50.903251 PM            1         22
+11-NOV-19 02.19.50.911762 PM            2         23
+11-NOV-19 02.19.50.920357 PM            3         24
+11-NOV-19 02.19.50.928928 PM            4         25
+11-NOV-19 02.19.50.937452 PM            5         21
+11-NOV-19 02.19.50.945840 PM            6         22
+11-NOV-19 02.19.50.954645 PM            7         23
+11-NOV-19 02.19.50.963287 PM            8         24
+11-NOV-19 02.19.50.971721 PM            9         25
+11-NOV-19 02.19.50.980178 PM           10         21
+11-NOV-19 02.19.51.884094 PM           11         22
+
