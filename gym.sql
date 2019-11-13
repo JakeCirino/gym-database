@@ -1,3 +1,4 @@
+--A digital copy of this file is available at https://github.com/JakeCirino/gym-database
 CREATE TABLE Customer (customerId INT NOT NULL,
 	address VARCHAR(144),
 	phone VARCHAR(24),
