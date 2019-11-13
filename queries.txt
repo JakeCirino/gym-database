@@ -1,6 +1,6 @@
 A digital copy of this file is available at https://github.com/JakeCirino/gym-database
 
-SELECT * FROM Employee WHERE salary > 50000; --shows all employees mho make more than $50,000
+SELECT * FROM Employee WHERE salary > 50000; --shows all employees who make more than $50,000
 
        SSN      GYMID     SALARY ADDRESS                        PHONE                    FNAME                            LNAME
 ---------- ---------- ---------- ------------------------------ ------------------------ -------------------------------- --------------------------------
@@ -9,7 +9,7 @@ SELECT * FROM Employee WHERE salary > 50000; --shows all employees mho make more
     111116         25      55000 122 N Market Lane              6960430122               Joe                              Rogan
     111117         25      80000 432 Vermont Drive              3213435521               Juji                             Mufu
 
-SELECT * FROM Customer WHERE customerId IN (SELECT customerId FROM Customer_CheckIn WHERE timestamp IN (SELECT MAX(timestamp) FROM Customer_CheckIn WHERE gymId = 24)); --lists the most recent customer to check in to gym with id 24
+SELECT * FROM Customer WHERE customerId IN (SELECT customerId FROM Customer_CheckIn WHERE timestamp IN (SELECT MAX(timestamp) FROM Customer_CheckIn WHERE gymId = 24)); --lists the most recent customer to check in to gym with gymId 24
 
 CUSTOMERID ADDRESS                        PHONE                    FNAME                            LNAME
 ---------- ------------------------------ ------------------------ -------------------------------- --------------------------------
